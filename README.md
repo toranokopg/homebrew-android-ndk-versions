@@ -7,13 +7,13 @@ Here you'll find alternate versions of Android NDK for the [Homebrew Cask](https
 After you install Homebrew, run the following command:
 
 ```sh
-brew tap toranoko0518/android-ndk-versions
+brew tap toranokopg/android-ndk-versions
 ```
 
 You can now install alternate versions of NDK.
 
 ```sh
-brew cask install android-ndk10
+brew install android-ndk10 --cask
 ```
 
 ## Available NDK versions
