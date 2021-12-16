@@ -2,9 +2,16 @@ cask "android-ndk16" do
   version "16b"
   sha256 "9654a692ed97713e35154bfcacb0028fdc368128d636326f9644ed83eec5d88b"
 
-  url "https://dl.google.com/android/repository/android-ndk-r#{version}-darwin-x86_64.zip"
+  url "https://dl.google.com/android/repository/android-ndk-r#{version}-darwin-x86_64.zip",
+      verified: "dl.google.com/android/repository/"
   name "Android NDK"
+  desc "Toolset to implement parts of Android apps in native code"
   homepage "https://developer.android.com/ndk/index.html"
+
+  livecheck do
+    url "https://developer.android.com/ndk/downloads"
+    regex(/Latest\s+LTS\s+Version\s+\(r(\d+[a-z]?)\)/i)
+  end
 
   conflicts_with cask: "crystax-ndk"
 
@@ -12,7 +19,7 @@ cask "android-ndk16" do
   preflight do
     FileUtils.ln_sf("#{staged_path}/android-ndk-r#{version}", "#{HOMEBREW_PREFIX}/share/android-ndk")
 
-    IO.write shimscript, <<~EOS
+    File.write shimscript, <<~EOS
       #!/bin/bash
       readonly executable="#{staged_path}/android-ndk-r#{version}/$(basename ${0})"
       test -f "${executable}" && exec "${executable}" "${@}"
