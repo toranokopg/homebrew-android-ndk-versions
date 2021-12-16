@@ -32,6 +32,8 @@ brew install android-ndk10 --cask
 | 19      | r19c     |
 | 20      | r20b     |
 | 21      | r21e     |
+| 22      | r22b     |
+| 23      | r23b     |
 
 ## License
 
