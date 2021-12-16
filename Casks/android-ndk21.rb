@@ -1,6 +1,6 @@
 cask "android-ndk21" do
-  version "21d"
-  sha256 "5851115c6fc4cce26bc320295b52da240665d7ff89bda2f5d5af1887582f5c48"
+  version "21e"
+  sha256 "437278103a3db12632c05b1be5c41bbb8522791a67e415cc54411a65366f499d"
 
   url "https://dl.google.com/android/repository/android-ndk-r#{version}-darwin-x86_64.zip",
       verified: "dl.google.com/android/repository/"
