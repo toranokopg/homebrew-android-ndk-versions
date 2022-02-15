@@ -13,7 +13,7 @@ brew tap toranokopg/android-ndk-versions
 You can now install alternate versions of NDK.
 
 ```sh
-brew install android-ndk10 --cask
+brew install --cask android-ndk10
 ```
 
 ## Available NDK versions
